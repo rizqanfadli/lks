@@ -1,9 +1,12 @@
 <?php
 
+use App\Models\Games;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $games = Games::paginate(10);
+    return view('welcome', compact('games'));
 });
 
 Auth::routes();

@@ -35,6 +35,12 @@ class UserResource extends Resource
                 TextInput::make('password')
                 ->hiddenOn('edit')
                 ->required(),
+                Select::make('status')
+                ->options([
+                    'aktif' => 'aktif',
+                    'tidak aktif' => 'tidak aktif'
+                ])
+                ->default('aktif'),
                 Select::make('roles')
                 ->relationship('roles', 'name')
             ]);
@@ -48,6 +54,9 @@ class UserResource extends Resource
                 ->searchable()
                 ->searchable(),
                 TextColumn::make('email')
+                ->searchable()
+                ->searchable(),
+                TextColumn::make('status')
                 ->searchable()
                 ->searchable(),
                 TextColumn::make('roles.name')

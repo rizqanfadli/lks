@@ -35,6 +35,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <a href="" class="btn btn-primary">Beranda</a>
+                        
+                        <a href="/admin/games" class="btn btn-primary">Upload Game</a>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

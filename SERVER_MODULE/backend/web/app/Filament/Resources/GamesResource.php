@@ -29,10 +29,15 @@ class GamesResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')
+                ->label('Nama Game')
+                ->placeholder('Masukkan Nama Game')
                 ->required(),
                 TextInput::make('slug')
+                ->label('Kata Kunci')
+                ->placeholder('Masukkan Kata Kunci')
                 ->required(),
                 TextInput::make('description')
+                ->placeholder('Masukkan Deskripsi')
                 ->required(),
                 FileUpload::make('img')
                 ->default('thumbnail.png')

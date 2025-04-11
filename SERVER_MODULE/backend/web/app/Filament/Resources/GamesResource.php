@@ -6,10 +6,12 @@ use App\Filament\Resources\GamesResource\Pages;
 use App\Filament\Resources\GamesResource\RelationManagers;
 use App\Models\Games;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -32,6 +34,14 @@ class GamesResource extends Resource
                 ->required(),
                 TextInput::make('description')
                 ->required(),
+                FileUpload::make('img')
+                ->default('thumbnail.png')
+                ->nullable()
+                ->columnSpan('full')
+                ->image(),
+                FileUpload::make('file')
+                ->columnSpan('full')
+                ->required(),
             ]);
     }
 
@@ -48,6 +58,9 @@ class GamesResource extends Resource
                 TextColumn::make('description')
                 ->sortable()
                 ->searchable(),
+                ImageColumn::make('img')
+                ->width(100)
+                ->height(100),
             ])
             ->filters([
                 //

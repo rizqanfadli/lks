@@ -19,7 +19,8 @@ class GamesResource extends Resource
 {
     protected static ?string $model = Games::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tv';
+    protected static ?string $pluralModelLabel = 'Daftar Game';
 
     public static function form(Form $form): Form
     {

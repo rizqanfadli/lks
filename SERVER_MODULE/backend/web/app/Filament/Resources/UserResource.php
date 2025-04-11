@@ -22,7 +22,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
     {
@@ -33,6 +33,7 @@ class UserResource extends Resource
                 TextInput::make('email')
                 ->required(),
                 TextInput::make('password')
+                ->hiddenOn('edit')
                 ->required(),
                 Select::make('roles')
                 ->relationship('roles', 'name')
@@ -47,6 +48,9 @@ class UserResource extends Resource
                 ->searchable()
                 ->searchable(),
                 TextColumn::make('email')
+                ->searchable()
+                ->searchable(),
+                TextColumn::make('roles.name')
                 ->searchable()
                 ->searchable(),
                 TextColumn::make('create_at')

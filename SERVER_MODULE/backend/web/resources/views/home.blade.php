@@ -21,7 +21,17 @@
     </div>
 </div>
 @endsection --}}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game Browser</title>
+  <link rel="icon" type="image/x-icon" href="../storage/logo.png">
 
+</head>
+<body>  
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -35,7 +45,7 @@
                         <h5 class="card-title">{{ $game->slug }}</h5>
                         {{-- <p class="card-text">Versi: {{ $game->versi }}</p> --}}
                         <a href="{{ Storage::url($game->file) }}" class="btn btn-primary">Mainkan</a>
-                        <a href="{{ route('login') }}" class="btn btn-primary">Detail Game</a>
+                        <a href="/detail" class="btn btn-primary">Detail Game</a>
                     </div>
                 </div>
             </div>
@@ -47,3 +57,5 @@
     {{$games->links()}}
 </div>
 @endsection
+</body>
+</html>

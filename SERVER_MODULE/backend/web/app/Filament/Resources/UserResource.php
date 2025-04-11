@@ -52,19 +52,18 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('name')
                 ->searchable()
-                ->searchable(),
+                ->sortable(),
                 TextColumn::make('email')
-                ->searchable()
+                ->sortable()
                 ->searchable(),
                 TextColumn::make('status')
-                ->searchable()
+                ->sortable()
                 ->searchable(),
                 TextColumn::make('roles.name')
-                ->searchable()
+                ->sortable()
                 ->searchable(),
                 TextColumn::make('created_at')
                 ->dateTime()
-                ->searchable()
                 ->searchable(),
                 // TextColumn::make('sessions.')
             ])

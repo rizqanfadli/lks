@@ -2,20 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GameResource\Pages;
-use App\Filament\Resources\GameResource\RelationManagers;
-use App\Models\Game;
+use App\Filament\Resources\GamesResource\Pages;
+use App\Filament\Resources\GamesResource\RelationManagers;
+use App\Models\Games;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GameResource extends Resource
+class GamesResource extends Resource
 {
-    protected static ?string $model = Game::class;
+    protected static ?string $model = Games::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,7 +25,12 @@ class GameResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')
+                ->required(),
+                TextInput::make('slug')
+                ->required(),
+                TextInput::make('description')
+                ->required(),
             ]);
     }
 
@@ -31,7 +38,15 @@ class GameResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('slug')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('description')
+                ->sortable()
+                ->searchable(),
             ])
             ->filters([
                 //

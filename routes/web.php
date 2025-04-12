@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $games = Games::paginate(10);
-    return view('welcome', compact('games'));
+    $gamesCount = Games::count(); 
+    return view('home', compact('games', 'gamesCount'));
 });
 
 Auth::routes();

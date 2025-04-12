@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../storage/logo.png">
 
      <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -12,7 +13,7 @@
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          font-family: "Poppins" , sans-serif;
+          font-family: "Poppins";
         }
         body{
           min-height: 100vh;
@@ -197,6 +198,9 @@
         <div class="button">
             <input type="button" value=" Kirim (cooming soon!)" >
         </div>        
+        <div class="button">
+           <a href="/" class="button w-100 mb-2 mt-2">kembali</a>
+        </div>
     </form>
     </div>
     </div>

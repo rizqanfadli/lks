@@ -12,6 +12,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/detail', function () {
-    return view('detail');
+Route::get('/detail/{id}', function ($id) {
+    $games = Games::findOrFail($id);
+    return view('detail', compact('games'));
 });

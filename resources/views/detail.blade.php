@@ -26,9 +26,7 @@
     <main>
       <div class="hero py-5 bg-light">
          <div class="container text-center"> 
-            <h2 class="mb-1">
-              Demo Game 1
-            </h2> 
+            <h2 class="mb-1">{{ $games->title}}</h2> 
             
             <a href="profile.html" class="btn btn-success">By Dev1</a>
             <div class="text-muted">

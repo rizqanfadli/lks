@@ -45,7 +45,7 @@
                         <h5 class="card-title">{{ $game->slug }}</h5>
                         {{-- <p class="card-text">Versi: {{ $game->versi }}</p> --}}
                         <a href="{{ Storage::url($game->file) }}" class="btn btn-primary">Mainkan</a>
-                        <a href="/detail" class="btn btn-primary">Detail Game</a>
+                        <a href="{{url('/detail/' . $game->id)}}" class="btn btn-primary">Detail Game</a>
                     </div>
                 </div>
             </div>

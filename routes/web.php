@@ -17,3 +17,4 @@ Route::get('/detail/{id}', function ($id) {
     $games = Games::findOrFail($id);
     return view('detail', compact('games'));
 });
+Route::get('/play/{slug}', [App\Http\Controllers\GameController::class, 'play'])->name('games.play');

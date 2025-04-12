@@ -1,38 +1,26 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detail Game</title>
-</head>
-<body>
-    <div>welcome</div>
-    
-</body>
-</html> --}}
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Manage User - Administrator Portal</title>
+    <title>Game Browser</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+      img {
+         border-radius: 10px;
+        }
+    </style>
   </head>
   <body> 
 
     <main>
       <div class="hero py-5 bg-light">
          <div class="container text-center"> 
-            <h2 class="mb-1">{{ $games->title}}</h2> 
+            <h2 class="mb-1">{{ $games->title }}</h2> 
             
-            <a href="profile.html" class="btn btn-success">By Dev1</a>
-            <div class="text-muted">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, numquam repellendus perspiciatis cupiditate veritatis porro quod eveniet animi perferendis molestias debitis temporibus, asperiores iusto.
-            </div>
-            <h5 class="mt-2">Last Versions v2 (2024-04-09 22:45:41)</h5>
+            {{-- <a href="profile.html" class="btn btn-success">{{ $users->name }}</a> --}}
+            <div class="text-muted">{{ $games->description }}</div>
          </div>
       </div>
 
@@ -63,13 +51,14 @@
                     </div>
                   </div>
                   <div class="col">
-                    <img src="../example_game/v1/thumbnail.png" alt="Demo Game 1 Logo" style="width: 100%">
-                    <a href="../example_game/v1//game.zip" class="btn btn-primary w-100 mb-2 mt-2">Download Game</a>
+                    <img src="{{ Storage::url($games->img) }}" alt="Demo Game 1 Logo" style="width: 100%">
+                   <a href="{{ route('games.play', $games->slug) }}" class="btn btn-primary">Mainkan</a>
+                    <a href="{{ Storage::url($games->file) }}" class="btn btn-primary w-100 mb-2 mt-2">Download Game</a>
                   </div>
                 </div>
 
                 
-                <a href="discover-games.html" class="btn btn-danger w-100">Back</a>
+                <a href="/" class="btn btn-danger w-100">Back</a>
 
                </div>
              </div>  

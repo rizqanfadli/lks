@@ -32,15 +32,14 @@
                 </button>
         
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side -->
                     <ul class="navbar-nav me-auto"></ul>
-        
-                    <!-- Right Side -->
                     <ul class="navbar-nav ms-auto d-flex align-items-center gap-2">
                         <li class="nav-item">
                             <a class="nav-link fw-semibold" href="/">Beranda</a>
                         </li>
-        
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="/contact">Kontak</a>
+                        </li>
                         @auth
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle fw-semibold" href="#" role="button"
@@ -78,11 +77,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        
+        </nav>  
     </div>
-
-
         <main class="py-4">
             @yield('content')
         </main>

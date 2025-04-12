@@ -23,8 +23,7 @@
                             <img src="{{ $game->img ? Storage::url($game->img) : asset('storage/default.jpg') }}" class="card-img-top img-fluid" alt="{{ $game->slug }}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ $game->slug }}</h5>
-                                {{-- <p class="card-text">Versi: {{ $game->versi }}</p> --}}
-                                <a href="{{ Storage::url($game->file) }}" class="btn btn-primary">Mainkan</a>
+                                <a href="{{ route('games.play', $game->slug) }}" class="btn btn-primary">Mainkan</a>
                                 <a href="{{url('/detail/' . $game->id)}}" class="btn btn-primary">Detail Game</a>
                             </div>
                         </div>

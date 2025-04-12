@@ -18,3 +18,6 @@ Route::get('/detail/{id}', function ($id) {
     return view('detail', compact('games'));
 });
 Route::get('/play/{slug}', [App\Http\Controllers\GameController::class, 'play'])->name('games.play');
+Route::get('/contact', function () {
+    return view('contact');
+});
